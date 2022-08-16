@@ -1,7 +1,8 @@
 import tkinter as tk
-from tkinter import ttk
 import pygments.lexers
+from tkinter import ttk
 from chlorophyll import CodeView
+from widgets.texteditor import ScrollCode
 
 def tabupd():
   for x in cbuttons: x.config(bg="#020203")
@@ -30,7 +31,7 @@ tabbar = tk.Frame(root, bg = "#020203")
 tabbar.pack(fill="x")
 newbtn = tk.Button(tabbar, font="Consolas 13 bold", text = "+", command = newtab, width = 2, relief = "flat", bg="#020203", fg="#b3b1ad", activebackground="#020203", borderwidth=0)
 newbtn.pack(side="right", padx= 5, pady=0)
-codeview = CodeView(root, font="Consolas 13", lexer=pygments.lexers.CLexer, color_scheme="ayu-dark")
+codeview = ScrollCode(root, font="Consolas 13", lexer=pygments.lexers.CLexer, color_scheme="ayu-dark")
 codeview.pack(fill="both", expand=True)
 
 newtab()
