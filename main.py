@@ -11,17 +11,25 @@ def tabupd():
   cbuttons[seltab.get()].config(bg = "#0a0e14")
   root.after(100, tabupd)
 
+def tabswitch(i):
+  tabtexts[seltab.get()] = codeview.get(1.0, tk.END)
+  seltab.set(i)
+  codeview.delete(1.0,tk.END)
+  codeview.insert(1.0, tabtexts[i])
+
 def newtab():
   global totbutts
-  tbuttons.append(tk.Button(tabbar, font = "Consolas 13",text = " Untitled ", relief="flat", fg="#b3b1ad", bg="#020203", activebackground="#1b2733", borderwidth=0, command=lambda i=totbutts:seltab.set(i)))
+  tbuttons.append(tk.Button(tabbar, font = "Consolas 13",text = " Untitled ", relief="flat", fg="#b3b1ad", bg="#020203", activebackground="#1b2733", borderwidth=0, command=lambda i=totbutts:tabswitch(i)))
   tbuttons[-1].pack(side = "left", padx = (0,0), pady = 0)
   cbuttons.append(tk.Button(tabbar, font = "Consolas 13", text = " X ", width=2, relief = "flat", fg="#f00", bg="#020203", activebackground="#0a0e14", borderwidth=0))
   cbuttons[-1].pack(side = "left", padx = (0,5), pady=0)
+  tabtexts.append("")
   totbutts += 1
 
 totbutts = 0
 cbuttons = []
 tbuttons = []
+tabtexts = []
 
 root = tk.Tk()
 
