@@ -85,7 +85,7 @@ class TextLineNumbers(tk.Canvas):
     def __init__(self, *args, **kwargs):
         self.callbacks = kwargs.get("callbacks", [])
         del kwargs["callbacks"]
-        tk.Canvas.__init__(self, *args, **kwargs, bg="#0a0e14")
+        tk.Canvas.__init__(self, *args, **kwargs, bg="#0a0e14", highlightthickness=0)
         self.text_widget = None
         self.mode = "dark"
 
