@@ -1,0 +1,6 @@
+author:
+  name: whmsft
+  url: https://github.com/whmsft
+package:
+  name: editor (@Alpha)
+  version: [0, 0, 1]
