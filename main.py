@@ -11,4 +11,5 @@ PACKAGE = {}
 for author in os.listdir(cwd+"/package"): PACKAGE[author] = []
 for author in PACKAGE.keys(): 
     for package in os.listdir(cwd+"/package/"+author): PACKAGE[author].append(package)
-print(PACKAGE)
+
+for majorPackage in PACKAGE["whmsft"]: exec(open(cwd+"/package/whmsft/"+majorPackage+"/main.py").read())
