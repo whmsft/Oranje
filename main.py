@@ -16,8 +16,6 @@ if __name__ == "__main__":
 			if (os.path.isdir(f'{pdir}/package/{author}/{package}')):
 				PACKAGE[author].append(package)
 				exec(f'import package.{author}.{package}')
-	for officialPackage in PACKAGE['whmsft']:
-		exec(f'{officialPackage}.init()')
-	packagesTemporary = PACKAGE.pop()
-	packagesTemporary.pop('whmsft')
-	del author, package, packagesTemporary
+	exec('package.whmsft.oranje.init()')
+	PACKAGE['whmsft'].remove("oranje")
+	del author, package
