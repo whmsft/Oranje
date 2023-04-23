@@ -1,7 +1,12 @@
-import chlorophyll
-import tklinenums
+import tkinter as tk
+from tkinter import ttk
+from pygments import lexers
+from chlorophyll import CodeView
 
-def init():
-    print("Efficacious!")
+editor = tk.Tk()
 
-if __name__ == "__main__": init()
+ttk.Style().configure("TLineNumbers", background="#202020", foreground="#ffffff")
+codeview = CodeView(editor, lexer=lexers.PythonLexer, color_scheme="monokai", font="Cascadia\ Code 14", tab_width=4)
+codeview.pack(fill="both", expand=True)
+
+if __name__ == "__main__": editor.mainloop()

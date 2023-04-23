@@ -1,7 +1,5 @@
 import os
 import yaml
-import tkinter as tk
-from tkinter import ttk
 from package.whmsft import oranje
 
 cwd = os.getcwd()
@@ -11,19 +9,10 @@ PACKAGE = {}
 """
 How the "PACKAGE" dict will look like:
 PACKAGE = {
-	'whmsft': [
-		'oranje': {
-			'author': {
-				'name': 'whmsft',
-				'email': 'whmsft@outlook.com'
-			},
-			'package': {
-				'name': 'Oranje Editor',
-  				'url': 'https://github.com/whmsft/Oranje',
-  				'version': [0, 0, 1]
-			}
+	'whmsft': {
+		'oranje': {...} # With all data in `data.yml`
 		}
-	]
+	}
 }
 """
 
@@ -35,9 +24,12 @@ if __name__ == "__main__":
 		for pack in os.listdir(f'{pdir}/package/{author}'):
 			if (os.path.isdir(f'{pdir}/package/{author}/{pack}')):
 				if not (author == "whmsft" and pack == "oranje"):
-					PACKAGE[author].append(pack)
+					PACKAGE[author][pack] = yaml.safe_load(open(f'{pdir}/package/{author}/{pack}/data.yml').read())
 					exec(f'import package.{author}.{pack}')
-	del author, pack
-
-	oranje.init()
+					taskList = PACKAGE[author][pack]['tasks']
+					if ('initialize' in taskList) and (taskList['initialize'] != None):
+						exec(f'package.{author}.{pack}.{taskList["initialize"]}')
+					del author, pack, taskList
+	
+	oranje.editor.mainloop()
 	
