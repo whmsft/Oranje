@@ -1,6 +1,7 @@
 author:
   name: whmsft
-  url: https://github.com/whmsft
+  email: whmsft@outlook.com
 package:
-  name: editor (@Alpha)
+  name: Oranje Editor
+  url: https://github.com/whmsft/Oranje
   version: [0, 0, 1]
