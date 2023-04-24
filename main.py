@@ -29,7 +29,18 @@ if __name__ == "__main__":
 					taskList = PACKAGE[author][pack]['tasks']
 					if ('initialize' in taskList) and (taskList['initialize'] != None):
 						exec(f'package.{author}.{pack}.{taskList["initialize"]}')
-					del author, pack, taskList
+					del taskList
 	
+	for author in PACKAGE.keys():
+		for pack in author.keys():
+			taskList = PACKAGE[author][pack]['tasks']
+			if ('beforeLoop' in taskList) and (taskList['beforeLoop'] != None):
+				exec(f'package.{author}.{pack}.{taskList["beforeLoop"]}')
+			del taskList
 	oranje.editor.mainloop()
-	
+	for author in PACKAGE.keys():
+		for pack in author.keys():
+			taskList = PACKAGE[author][pack]['tasks']
+			if ('afterLoop' in taskList) and (taskList['afterLoop'] != None):
+				exec(f'package.{author}.{pack}.{taskList["afterLoop"]}')
+			del taskList
