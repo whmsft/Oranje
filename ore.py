@@ -10,8 +10,10 @@ print("[Loaded filesystem]")
 print(fs.ls("package"))
 print("[Loaded folder]")
 fs.get("package/whmsft", 'pp/', recursive=True)"""
-lualipa = 2**24
-with alive_bar(lualipa, title="[RET]") as bar:
-    while lualipa != 0:
+packtitle = "whmsft/oranje"
+dirpath = "@package/whmsft/oranje"
+f = 2**250
+with alive_bar(f, title="[GET] (github) {}") as bar:
+    while f != 0:
         bar()
-        lualipa -= 1
+        f -= 1
