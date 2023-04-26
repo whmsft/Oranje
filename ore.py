@@ -6,10 +6,12 @@ from tqdm import tqdm
 if len(sys.argv) > 1:
     repo = sys.argv[1]
     branch = sys.argv[2] if (len(sys.argv)>2) else "main"
-else: sys.exit()
+else:
+    print("expected: ore {repo} {branch}\n  ex: ore whmsft/oranje")
+    sys.exit()
 
 url = f'https://github.com/{repo}/archive/refs/heads/{branch}.zip'
-filename = f'./package/{repo}.zip'
+filename = f'./{repo.split("/")[1]}.zip'
 
 response = requests.get(url, stream=True)
 file_size = int(response.headers.get("Content-Length", 0))
