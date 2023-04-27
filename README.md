@@ -6,5 +6,13 @@
 #### This editor aims to be highly moduler, such that
 
 * The executable is a blank tkinter app that runs modules
-* Updating and modules controlled by a cli tool
-* Modules with priority (for initialization)
+* Updating and modules controlled by a cli tool (called ore)
+
+## How To's
+
+**Install package:**
+```
+# Branch name and directory are optional
+python ore.py gh whmsft/oranje --branch=main --dir="package/whmsft/oranje/"
+```
+*This installs package from github repo "whmsft/oranje" at branch main from provided folder*

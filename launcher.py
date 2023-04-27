@@ -11,7 +11,7 @@ PACKAGE = {}
 How the "PACKAGE" dict will look like:
 PACKAGE = {
 	'whmsft': {
-		'oranje': {...} # With all data in `data.yml`
+		'oranje': {...} With all data in `data.yml` of the package
 		}
 	}
 }
