@@ -1,3 +1,9 @@
-chlorophyll>=0.3.1
+# @ore
+tqdm
+fire
+requests
+# @launcher
 pyyaml
+# @editor
+chlorophyll>=0.3.1
 pygments
