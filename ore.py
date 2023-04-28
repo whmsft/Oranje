@@ -38,6 +38,6 @@ class Ore:
 					if chunk:
 						f.write(chunk)
 						progress.update(len(chunk))
-		print("Download complete!")
+		print(f"Installed {repo} from GitHub")
 if __name__ == "__main__":
 	fire.Fire(Ore)
