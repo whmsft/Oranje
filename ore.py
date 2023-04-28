@@ -29,7 +29,7 @@ class Ore:
 	animationThread.daemon = True
 	animationThread.start()
 	def install(self, repo="whmsft/oranje", branch="main", dir=""):
-		global ANIMATE, ANIMATE_TEXT,animationThread
+		global ANIMATE, ANIMATE_TEXT, animationThread
 		ANIMATE = True
 		url = f'https://github.com/{repo}/archive/refs/heads/{branch}.zip'
 		filename = f'{TEMP}/{repo.split("/")[1]}.zip'
@@ -43,12 +43,11 @@ class Ore:
 						f.write(chunk)
 						progress.update(len(chunk))
 		ANIMATE_TEXT = "Extracting zipped repository"
-		ANIMATE = True
+		#ANIMATE = True
 		with zipfile.ZipFile(filename) as archive:
-			for file in archive.namelist():
-				if file.startswith(dir):
-					archive.extract(file, f'{PROGRAM_DIR}/package/{repo}/{file}')
+			archive.extractall(f'{TEMP}/{repo}')
+		
 		ANIMATE = False
-		print(f"Installed {repo} from GitHub")
+		print(f"\nInstalled {repo} from GitHub")
 if __name__ == "__main__":
 	fire.Fire(Ore)
