@@ -13,6 +13,6 @@
 **Install package:**
 ```
 # Branch name and directory are optional
-python ore.py gh whmsft/oranje --branch=main --dir="package/whmsft/oranje/"
+python ore.py install whmsft/oranje --branch=main --dir="package/whmsft/oranje/"
 ```
 *This installs package from github repo "whmsft/oranje" at branch main from provided folder*

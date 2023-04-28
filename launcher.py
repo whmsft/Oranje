@@ -1,4 +1,4 @@
-print("Welcome, This is Oranje Editor executable...")
+print("Welcome, This is Oranje Editor executable")
 import os
 import yaml
 from package.whmsft import oranje
