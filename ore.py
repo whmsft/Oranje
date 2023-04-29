@@ -16,10 +16,11 @@ ANIMATE_TEXT = "Working Online"
 TEMP = tempfile.gettempdir()
 PROGRAM_DIR = os.path.dirname(os.path.realpath(__file__))
 
+cycle = ['[    ]', '[=   ]', '[==  ]', '[=== ]', '[ ===]', '[  ==]', '[   =]']
 
 def loadingAnimator():
-    global ANIMATE, ANIMATE_TEXT
-    for state in itertools.cycle(["⢿", "⣻", "⣽", "⣾", "⣷", "⣯", "⣟", "⡿"]):
+    global ANIMATE, ANIMATE_TEXT, cycle
+    for state in itertools.cycle(cycle):
         if ANIMATE:
             sys.stdout.write(f'\r{ANIMATE_TEXT} ' + state)
             sys.stdout.flush()
@@ -48,9 +49,9 @@ class Ore:
                         progress.update(len(chunk))
         with zipfile.ZipFile(filename) as archive:
             archive.extractall(f'{TEMP}/{repo}')
-        print(f'{TEMP}/{repo}/{repo.split("/")[1].lower()}-{branch}/{dir}')
+        shutil.rmtree(f'{PROGRAM_DIR}/package/{repo}/')
         shutil.copytree(f'{TEMP}/{repo}/{repo.split("/")[1].lower()}-{branch}/{dir}', f'{PROGRAM_DIR}/package/{repo}/')
-        print(f"\nInstalled {repo} from GitHub")
+        print(f"\nSuccessfully Installed {repo} from GitHub")
 
 
 if __name__ == "__main__":
