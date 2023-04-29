@@ -1,0 +1,12 @@
+author:
+  name: whmsft
+  email: whmsft@outlook.com
+package:
+  name: Oranje Editor
+  url: https://github.com/whmsft/Oranje
+  version: [0, 0, 1]
+tasks:
+  initialize: null
+  beforeLoop: null
+  afterLoop : null
+depends: []
