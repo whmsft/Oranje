@@ -34,7 +34,7 @@ if __name__ == "__main__":
 						print(f"(log) PACKAGE: initialize package {author}.{pack}")
 						exec(f'package.{author}.{pack}.{taskList["initialize"]}')
 					del taskList
-	
+	GLOBAL["PACKAGE"] = PACKAGE
 	for author in PACKAGE.keys():
 		for pack in PACKAGE[author].keys():
 			taskList = PACKAGE[author][pack]['tasks']

@@ -5,6 +5,7 @@ package:
   name: Oranje Editor
   url: https://github.com/whmsft/Oranje
   version: [0, 0, 1]
+GLOBAL_dictionary: GLOBAL
 tasks:
   initialize: null
   beforeLoop: null
