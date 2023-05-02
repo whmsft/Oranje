@@ -5,8 +5,6 @@ from chlorophyll import CodeView
 
 GLOBAL = {}
 
-def printGlobal(): print(GLOBAL)
-
 editor = tk.Tk()
 
 ttk.Style().configure("TLineNumbers", background="#202020", foreground="#ffffff")
