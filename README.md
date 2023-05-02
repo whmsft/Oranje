@@ -3,6 +3,9 @@
 
 ### Oranje is a text editor that aims to be a successor to my old editor [whirlEdit](https://github.com/whmsft/whirledit) and also a Refresh of "Thee".
 
+<img src="./oranje.concept.png">
+
+
 #### This editor aims to be highly moduler, such that
 
 * The executable is a blank tkinter app that runs modules
